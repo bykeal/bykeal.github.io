@@ -576,6 +576,11 @@ h3 {
   align-items: start;
 }
 
+/* A project with no side visual: its content uses the full card width */
+.work--wide {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .work__body {
   min-width: 0;
 }
@@ -663,7 +668,7 @@ h3 {
 
 /* Wide method diagram inside the text column: bounded so it isn't oversized */
 .project__figure--diagram {
-  max-width: 560px;
+  max-width: 720px;
 }
 
 .project__figure--diagram img {
