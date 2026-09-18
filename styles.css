@@ -661,6 +661,15 @@ h3 {
   border-top: 1px solid var(--tertiary);
 }
 
+/* Wide method diagram inside the text column: bounded so it isn't oversized */
+.project__figure--diagram {
+  max-width: 560px;
+}
+
+.project__figure--diagram img {
+  background: #fff;
+}
+
 .shots a {
   display: block;
   border: 1px solid var(--tertiary);

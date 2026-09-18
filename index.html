@@ -232,6 +232,10 @@
             <ul class="chips" aria-label="Technologies">
               <li class="chip">Python</li><li class="chip">PyTorch</li><li class="chip">torchvision</li><li class="chip">Hugging Face Transformers</li><li class="chip">OpenCV</li><li class="chip">Grad-CAM</li><li class="chip">Google Colab</li>
             </ul>
+            <figure class="project__figure project__figure--diagram">
+              <a href="assets/malaria-pipeline.png"><img src="assets/malaria-pipeline.png" width="1588" height="833" loading="lazy" alt="Pipeline diagram. Class labels (infected, uninfected, stage) are turned into five synthesised caption formats, one sampled per epoch, then encoded by a BERT tokenizer into text embeddings. Blood smear images from the NIH and MP-IDB datasets pass through CLAHE preprocessing (clip limit 2.0, 8×8 tile grid) into a frozen ViT-g/14 image encoder. Image embeddings, text embeddings and 32 learnable query tokens feed the BLIP-2 Q-Former, which outputs infected or uninfected and is evaluated on accuracy, recall, precision, F1 and AUROC."></a>
+              <figcaption>Pipeline: CLAHE preprocessing, a frozen ViT-g/14 image encoder, and a BLIP-2 Q-Former trained against synthesised captions. Click to enlarge.</figcaption>
+            </figure>
             <div class="project__links">
               <a class="btn btn--secondary" href="https://github.com/bykeal/Dissertation" rel="noopener">View repository</a>
             </div>
