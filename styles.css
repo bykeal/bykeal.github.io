@@ -354,6 +354,12 @@ h3 {
   margin-top: 28px;
 }
 
+/* Second role line ("Formerly ...") is 2px smaller than the first */
+.intro__role + .intro__role {
+  font-size: 22px;
+  line-height: 34px;
+}
+
 .intro__visual {
   display: flex;
   justify-content: center;
@@ -958,6 +964,11 @@ h3 {
   .intro__role {
     font-size: 20px;
     line-height: 30px;
+  }
+
+  .intro__role + .intro__role {
+    font-size: 18px;
+    line-height: 28px;
   }
 
   .social {
