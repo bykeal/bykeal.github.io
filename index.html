@@ -25,7 +25,6 @@
       <a class="brand" href="#top"><span class="brand__dot" aria-hidden="true"></span>bykeal</a>
       <nav class="nav" aria-label="Primary">
         <a href="#projects">Projects</a>
-        <a href="#client-work">Client work</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -39,10 +38,9 @@
       <!-- Hero -->
       <section class="card hero" aria-labelledby="hero-title">
         <div>
-          <p class="kicker">welcome</p>
           <h1 id="hero-title">Hi, I'm Chibuike. I turn messy processes into <em>working automation</em>.</h1>
           <p>I'm a data and RPA specialist with 3+ years of experience building automation, dashboards and applications on the Microsoft Power Platform for banking and enterprise teams.</p>
-          <p>These days I'm studying for an MSc in Artificial Intelligence in London, where I build agentic AI systems and run computer-vision research on the side.</p>
+          <p>I'm studying for an MSc in Artificial Intelligence in London, where I build agentic AI systems and run computer-vision research on the side. My aim is to combine that work with my automation background to build enterprise solutions that leverage AI.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="mailto:okonkwochibuike80@gmail.com">Get in touch</a>
             <a class="icon-btn" href="https://github.com/bykeal" aria-label="GitHub profile" rel="me noopener">
@@ -107,136 +105,148 @@
         </div>
       </section>
 
-      <!-- Featured projects -->
-      <section id="projects" aria-labelledby="projects-title">
+      <!-- Projects -->
+      <section class="block" id="projects" aria-labelledby="projects-title">
         <h2 class="section-title" id="projects-title">Projects</h2>
-        <p class="section-lede">Two things I've been building during my MSc.</p>
+        <p class="section-lede">Research and coursework from my MSc, plus Power Platform work delivered for clients. Client details are redacted on purpose. Click a screenshot to view it full size.</p>
 
-        <div class="main">
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>LRAA: Loan Rephasing Assistant</h3>
-                <span class="project__meta">MSc coursework · Python · agentic AI</span>
+        <div class="works">
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>LRAA: Loan Rephasing Assistant</h3>
+                  <span class="project__meta">MSc coursework · Python · agentic AI</span>
+                </div>
+                <span class="chip">coursework</span>
               </div>
-              <span class="chip">coursework</span>
+              <p>A multi-agent assistant that answers customer questions about why a loan's monthly instalment (EMI) changed. It replays a loan's full history to work out what the EMI should be, explains the result in plain language, and hands anything that doesn't add up to a human.</p>
+              <ul class="project__list">
+                <li>Tool-calling agents built with LangChain and Gemini 2.5 Flash, with Pydantic-validated JSON between each stage.</li>
+                <li>Amortisation and EMI maths done with <code>numpy-financial</code> and pandas, so the numbers come from code and not from the model.</li>
+                <li>The intent agent is told never to extract personal data such as names, emails or account numbers.</li>
+                <li>Streamlit front end over sample customer, loan and transaction data.</li>
+              </ul>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">Python</li><li class="chip">LangChain</li><li class="chip">Gemini</li><li class="chip">Pydantic</li><li class="chip">pandas</li><li class="chip">numpy-financial</li><li class="chip">Streamlit</li>
+              </ul>
             </div>
-            <p>A multi-agent assistant that answers customer questions about why a loan's monthly instalment (EMI) changed. It replays a loan's full history to work out what the EMI should be, explains the result in plain language, and hands anything that doesn't add up to a human.</p>
-            <ol class="flow" aria-label="How the agents hand off">
-              <li><strong>Intent agent</strong>classifies the request and pulls out the loan ID</li>
-              <li><strong>Loan analysis agent</strong>replays payments, top-ups, part-liquidations and rate changes</li>
-              <li><strong>Report agent</strong>writes the explanation for the customer</li>
-              <li><strong>Escalation</strong>emails an on-site agent when a discrepancy is found</li>
-            </ol>
-            <ul class="project__list">
-              <li>Tool-calling agents built with LangChain and Gemini 2.5 Flash, with Pydantic-validated JSON between each stage.</li>
-              <li>Amortisation and EMI maths done with <code>numpy-financial</code> and pandas, so the numbers come from code and not from the model.</li>
-              <li>The intent agent is told never to extract personal data such as names, emails or account numbers.</li>
-              <li>Streamlit front end over sample customer, loan and transaction data.</li>
-            </ul>
-            <ul class="chips" aria-label="Technologies">
-              <li class="chip">Python</li><li class="chip">LangChain</li><li class="chip">Gemini</li><li class="chip">Pydantic</li><li class="chip">pandas</li><li class="chip">numpy-financial</li><li class="chip">Streamlit</li>
-            </ul>
+            <div class="work__media">
+              <ol class="flow" aria-label="How the agents hand off">
+                <li><strong>Intent agent</strong>classifies the request and pulls out the loan ID</li>
+                <li><strong>Loan analysis agent</strong>replays payments, top-ups, part-liquidations and rate changes</li>
+                <li><strong>Report agent</strong>writes the explanation for the customer</li>
+                <li><strong>Escalation</strong>emails an on-site agent when a discrepancy is found</li>
+              </ol>
+            </div>
           </article>
 
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>Malaria detection: CNNs vs ViT vs BLIP-2-style contrastive</h3>
-                <span class="project__meta">MSc dissertation · computer vision · in progress</span>
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>Malaria detection: CNNs vs ViT vs BLIP-2-style contrastive</h3>
+                  <span class="project__meta">MSc dissertation · computer vision</span>
+                </div>
+                <span class="chip chip--status">in progress</span>
               </div>
-              <span class="chip chip--status">in progress</span>
+              <p>A comparison of six model types for classifying malaria blood-smear images as parasitised or uninfected, with a focus on whether we can see <em>why</em> a model makes its call.</p>
+              <ul class="project__list">
+                <li><strong>Models:</strong> ResNet-18, ResNet-50, ResNet-152 and VGG-19 (ImageNet-pretrained), a ViT-B/16, and a Q-Former trained with an image-text contrastive loss on BLIP-2's frozen ViT-g/14 vision tower.</li>
+                <li><strong>Data handling:</strong> patient/slide-aware train, validation and test splits so one patient's images never leak across sets, plus CLAHE contrast enhancement applied identically for every model.</li>
+                <li><strong>Efficiency:</strong> the frozen vision tower's output is cached once per image, which makes contrastive training roughly three orders of magnitude cheaper than running it live.</li>
+                <li><strong>Explainability:</strong> Grad-CAM for the CNNs and ViT, and Q-Former cross-attention for the contrastive model.</li>
+                <li>Runs on CPU locally and on GPU in Google Colab. Every training script has a smoke-test mode for quick pipeline checks.</li>
+              </ul>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">Python</li><li class="chip">PyTorch</li><li class="chip">torchvision</li><li class="chip">Hugging Face Transformers</li><li class="chip">OpenCV</li><li class="chip">Grad-CAM</li><li class="chip">Google Colab</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--secondary" href="https://github.com/bykeal/Dissertation" rel="noopener">View repository</a>
+              </div>
             </div>
-            <p>A comparison of six model types for classifying malaria blood-smear images as parasitised or uninfected, with a focus on whether we can see <em>why</em> a model makes its call.</p>
-            <ul class="project__list">
-              <li><strong>Models:</strong> ResNet-18, ResNet-50, ResNet-152 and VGG-19 (ImageNet-pretrained), a ViT-B/16, and a Q-Former trained with an image-text contrastive loss on BLIP-2's frozen ViT-g/14 vision tower.</li>
-              <li><strong>Data handling:</strong> patient/slide-aware train, validation and test splits so one patient's images never leak across sets, plus CLAHE contrast enhancement applied identically for every model.</li>
-              <li><strong>Efficiency:</strong> the frozen vision tower's output is cached once per image, which makes contrastive training roughly three orders of magnitude cheaper than running it live.</li>
-              <li><strong>Explainability:</strong> Grad-CAM for the CNNs and ViT, and Q-Former cross-attention for the contrastive model.</li>
-              <li>Runs on CPU locally and on GPU in Google Colab. Every training script has a smoke-test mode for quick pipeline checks.</li>
-            </ul>
-            <figure class="project__figure">
-              <img src="assets/clahe-preview.png" width="2234" height="761" loading="lazy" alt="Five blood-smear microscope images shown before and after CLAHE contrast enhancement. The enhanced row shows stronger texture and darker stained cells.">
-              <figcaption>The CLAHE preprocessing step: original smears (top) and contrast-enhanced versions (bottom).</figcaption>
-            </figure>
-            <ul class="chips" aria-label="Technologies">
-              <li class="chip">Python</li><li class="chip">PyTorch</li><li class="chip">torchvision</li><li class="chip">Hugging Face Transformers</li><li class="chip">OpenCV</li><li class="chip">Grad-CAM</li><li class="chip">Google Colab</li>
-            </ul>
-            <div class="project__links">
-              <a class="btn btn--secondary" href="https://github.com/bykeal/Dissertation" rel="noopener">View repository</a>
+            <div class="work__media">
+              <figure class="project__figure">
+                <a href="assets/clahe-preview.png"><img src="assets/clahe-preview.png" width="2234" height="761" loading="lazy" alt="Five blood-smear microscope images shown before and after CLAHE contrast enhancement. The enhanced row shows stronger texture and darker stained cells."></a>
+                <figcaption>The CLAHE preprocessing step: original smears (top) and contrast-enhanced versions (bottom).</figcaption>
+              </figure>
             </div>
           </article>
-        </div>
-      </section>
 
-      <!-- Client work -->
-      <section id="client-work" aria-labelledby="client-title">
-        <h2 class="section-title" id="client-title">Client work</h2>
-        <p class="section-lede">Selected Power Platform projects delivered for clients. Client details are redacted on purpose. Click a screenshot to view it full size.</p>
-
-        <div class="grid-2">
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>Incident Reporting and Management App</h3>
-                <span class="project__meta">Power Apps developer</span>
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>Incident Reporting and Management App</h3>
+                  <span class="project__meta">Power Apps developer</span>
+                </div>
+                <span class="chip">client work</span>
               </div>
+              <p>An incident tracker built in Power Apps that gives an organisation end-to-end visibility of operational, safety, facility, IT, security and customer incidents. It replaced paper and email processes with one central system for logging, managing and reporting incidents in real time.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Power Apps</li><li class="chip">SQL</li></ul>
             </div>
-            <p>An incident tracker built in Power Apps that gives an organisation end-to-end visibility of operational, safety, facility, IT, security and customer incidents. It replaced paper and email processes with one central system for logging, managing and reporting incidents in real time.</p>
-            <div class="shots">
+            <div class="work__media shots">
               <a href="assets/work/portfolio-incident-1.jpg"><img src="assets/work/portfolio-incident-1.jpg" width="1425" height="795" loading="lazy" alt="Incident Logger app, Create Incident form with fields for title, owner, supervisor, team, status, severity, start and due dates, and attachments."></a>
               <a href="assets/work/portfolio-incident-2.jpg"><img src="assets/work/portfolio-incident-2.jpg" width="1015" height="569" loading="lazy" alt="Incident Logger dashboard showing counts of overdue, in-progress, closed and implemented incidents above a table of recent incidents with client details redacted."></a>
             </div>
-            <ul class="chips"><li class="chip">Power Apps</li><li class="chip">SQL</li></ul>
           </article>
 
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>Field Worker Scheduling and Reporting App</h3>
-                <span class="project__meta">Power Platform developer</span>
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>Field Worker Scheduling and Reporting App</h3>
+                  <span class="project__meta">Power Platform developer</span>
+                </div>
+                <span class="chip">client work</span>
               </div>
+              <p>A Power Apps application that lets a client schedule field workers, track the locations they visit and capture detailed reports during visits, so managers can see field activity as it happens.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Power Apps</li><li class="chip">Power Automate</li><li class="chip">SharePoint</li></ul>
             </div>
-            <p>A Power Apps application that lets a client schedule field workers, track the locations they visit and capture detailed reports during visits, so managers can see field activity as it happens.</p>
-            <div class="shots">
+            <div class="work__media shots">
               <a href="assets/work/portfolio-field-worker-1.jpg"><img src="assets/work/portfolio-field-worker-1.jpg" width="1429" height="799" loading="lazy" alt="Cluster Schedule app form for logging a control officer's daily work location, with supervisor, officer, location and date fields."></a>
               <a href="assets/work/portfolio-field-worker-2.jpg"><img src="assets/work/portfolio-field-worker-2.jpg" width="1434" height="802" loading="lazy" alt="Cluster Schedule app home screen with a side menu for logging schedules, viewing the schedule, branch visitation and uploading reports."></a>
             </div>
-            <ul class="chips"><li class="chip">Power Apps</li><li class="chip">Power Automate</li><li class="chip">SharePoint</li></ul>
           </article>
 
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>Automated Certificate Generation</h3>
-                <span class="project__meta">Power Automate support</span>
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>Automated Certificate Generation</h3>
+                  <span class="project__meta">Power Automate support</span>
+                </div>
+                <span class="chip">client work</span>
               </div>
+              <p>A Power Automate flow that creates and sends certificates to attendees as soon as their training ends, triggered by a Microsoft Forms submission.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Power Automate</li><li class="chip">Microsoft Forms</li></ul>
             </div>
-            <p>A Power Automate flow that creates and sends certificates to attendees as soon as their training ends, triggered by a Microsoft Forms submission.</p>
-            <div class="shots shots--single">
+            <div class="work__media shots">
               <a href="assets/work/portfolio-certificate-1.jpg"><img src="assets/work/portfolio-certificate-1.jpg" width="1410" height="769" loading="lazy" alt="Power Automate flow: a Microsoft Forms response triggers 'Get response details', then 'Populate a Microsoft Word template' with first name, last name and date, then 'Create file' in OneDrive."></a>
             </div>
-            <ul class="chips"><li class="chip">Power Automate</li><li class="chip">Microsoft Forms</li></ul>
           </article>
 
-          <article class="card project">
-            <div class="project__head">
-              <div>
-                <h3>User Sync Process for a Client Environment</h3>
-                <span class="project__meta">Automation support</span>
+          <article class="card work">
+            <div class="work__body project">
+              <div class="project__head">
+                <div>
+                  <h3>User Sync Process for a Client Environment</h3>
+                  <span class="project__meta">Automation support</span>
+                </div>
+                <span class="chip">client work</span>
               </div>
+              <p>A simple flow that force-synchronises users into a client's Microsoft environment, fixing delayed or incomplete user updates that were holding up access control and workflow participation.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Power Automate</li><li class="chip">Power Automate Administration</li></ul>
             </div>
-            <p>A simple flow that force-synchronises users into a client's Microsoft environment, fixing delayed or incomplete user updates that were holding up access control and workflow participation.</p>
-            <div class="shots shots--single">
+            <div class="work__media shots">
               <a href="assets/work/portfolio-user-sync-1.jpg"><img src="assets/work/portfolio-user-sync-1.jpg" width="1561" height="814" loading="lazy" alt="Power Automate flow named 'Force Sync Azure Active Directory Group members to specified CDS instance': a manual trigger, 'Get group members', then 'Apply to each' running 'Force Sync user'."></a>
             </div>
-            <ul class="chips"><li class="chip">Power Automate</li><li class="chip">Power Automate Administration</li></ul>
           </article>
         </div>
       </section>
 
       <!-- Experience -->
-      <section id="experience" aria-labelledby="exp-title">
+      <section class="block" id="experience" aria-labelledby="exp-title">
         <h2 class="section-title" id="exp-title">Experience</h2>
         <p class="section-lede">Three years on the Power Platform, from support desk to technical lead.</p>
 
@@ -320,7 +330,7 @@
       </section>
 
       <!-- Education -->
-      <section id="education" aria-labelledby="edu-title">
+      <section class="block" id="education" aria-labelledby="edu-title">
         <h2 class="section-title" id="edu-title">Education &amp; certifications</h2>
         <p class="section-lede">&nbsp;</p>
         <div class="grid-2">
@@ -357,12 +367,11 @@
           <article class="card role">
             <div class="role__head">
               <div>
-                <h3>Other</h3>
+                <h3>Other certifications</h3>
               </div>
             </div>
             <ul>
               <li>Cisco IT Essentials</li>
-              <li>Federal Science and Technical College, Awka (NABTEB, NECO, WAEC), 2013 – 2016</li>
             </ul>
           </article>
         </div>

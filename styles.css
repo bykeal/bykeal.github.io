@@ -146,12 +146,36 @@ a:hover {
   min-width: 0;
 }
 
+/* Sidebar sticks below the top bar and scrolls on its own when taller than the screen */
 .side {
   display: grid;
   gap: var(--gap);
   position: sticky;
   top: 72px;
   align-self: start;
+  max-height: calc(100vh - 88px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tertiary) transparent;
+}
+
+.side::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
+  border-radius: 9999px;
+}
+
+.side::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.side::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* ---------- Card primitive ---------- */
@@ -185,6 +209,33 @@ a:hover {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
+  background: var(--primary);
+}
+
+/* Main-body section divider: square node, red tab, then a grey rule that fades out */
+.block {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 56px;
+}
+
+.block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary) 0, var(--primary) 72px, var(--tertiary) 72px, rgba(55, 65, 81, 0) 100%);
+}
+
+.block::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 7px;
+  height: 7px;
   background: var(--primary);
 }
 
@@ -397,6 +448,11 @@ a:hover {
   gap: 12px;
 }
 
+.project__head .chip {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .project h3 {
   font-family: var(--font-sans);
   font-size: 23px;
@@ -476,14 +532,37 @@ a:hover {
   color: var(--primary);
 }
 
-.shots {
+/* One row per project: text on the left, a small visual on the right */
+.works {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: var(--gap);
 }
 
-.shots--single {
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  gap: 24px;
+  align-items: start;
+}
+
+.work__body {
+  min-width: 0;
+}
+
+.work__media {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-width: 0;
+}
+
+.work__media .flow {
   grid-template-columns: minmax(0, 1fr);
+}
+
+.work__media .project__figure img {
+  width: 100%;
+  height: auto;
 }
 
 .shots a {
@@ -505,10 +584,6 @@ a:hover {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top left;
-}
-
-.shots--single img {
-  aspect-ratio: 16 / 8;
 }
 
 .grid-2 {
@@ -577,12 +652,21 @@ a:hover {
   margin-bottom: 12px;
 }
 
-.tools__group {
-  margin-bottom: 14px;
+/* Divider between tool groups: red tab, then a grey rule that fades out */
+.tools__group + .tools__group {
+  position: relative;
+  margin-top: 18px;
+  padding-top: 18px;
 }
 
-.tools__group:last-child {
-  margin-bottom: 0;
+.tools__group + .tools__group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary) 0, var(--primary) 28px, var(--tertiary) 28px, rgba(55, 65, 81, 0) 100%);
 }
 
 .tools__label {
@@ -646,10 +730,24 @@ a:hover {
 
   .side {
     position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
   }
 
   .hero {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .work {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .work__media {
+    max-width: 480px;
   }
 }
 
