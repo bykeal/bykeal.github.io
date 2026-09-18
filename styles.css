@@ -894,6 +894,27 @@ h3 {
   gap: 8px;
 }
 
+/* ---------- Scroll animations (Motion) ----------
+   Targets start hidden only while html.will-animate is set (motion allowed and the helper
+   expected to load). script.js reveals each one and adds .is-revealed. With no JS, with
+   reduced motion, or if the helper fails, nothing is hidden. Keep this list in sync with
+   HERO and GROUPS in script.js. */
+.will-animate :is(
+  .intro, .status, .intro h1, .intro__sub, .intro__role, .intro__visual, .social li, .rule,
+  .section .divider, .section .eyebrow, .section .section-title, .section .section-lede,
+  .about__text > *, .stats > li, .skills > .skill, .works > .work, .timeline > .role,
+  .grid-2 > .role, .contact__list > li, .contact__form
+):not(.is-revealed) {
+  opacity: 0;
+}
+
+@media print {
+  .will-animate * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .about,
